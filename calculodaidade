@@ -1,5 +1,3 @@
-# Desenvolvimento
-
 #Desenvolva um programa que recebe do usuário nome completo e ano de nascimento que seja entre 1922 e 2021.
 #A partir dessas informações, o sistema mostrará o nome do usuário e a idade que completou, ou completará, no ano atual (2022).
 #Caso o usuário não digite um número ou apareça um inválido no campo do ano, o sistema informará o erro e continuará perguntando até que um valor correto seja preenchido.
@@ -7,19 +5,21 @@
 def informacoes():
   
   while(True):
-    
 
     print("Informe o seu nome completo:")
     nome = input()
     print("Informe o seu ano de nascimento:")
     ano = int(input())
-    
+
     try :
       
-      if (ano>= 1922) and (ano <= 2021):
-       idade = 2022 - ano
-       print(nome," - Idade no ano de 2022 é de",idade, "anos.")
-       print("--------------------------------")
+      if (ano < 1922) or (ano > 2021):
+        print("O ano de nascimento precisa ser entre 1922 e 2021.Informe novamente por gentileza!")
+
+      else:   
+        idade = 2022 - ano
+        print("O usuário", nome,"completou ou completará a idade de", idade, "no ano de 2022.")
+        print("--------------------------------")
       
     except :
       print("Erro, informe o ano correto!")
